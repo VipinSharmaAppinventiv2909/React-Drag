@@ -1,0 +1,119 @@
+// import React from "react";
+// import ReactDOM from "react-dom";
+// import "@atlaskit/css-reset";
+// import { DragDropContext } from "react-beautiful-dnd";
+// import styled from "styled-components";
+// import DropableComponent from "./components/DropableComponent";
+
+// // const Container = styled.div`
+// //  margin: 8px;
+// //  border: 1px solid lightgrey;
+// //  border-border-radius: 2px;
+// //  display-flex;
+// //  justify-content: center;
+// //  margin-bottom: 20px;
+// //  min-width: 400px;
+// //  background-color: skyblue;
+
+// // `;
+// const Wrapper = styled.div`
+//   display: flex;
+//   justify-content: center;
+//   flex-direction: column;
+//   align-items: center;
+// `;
+
+// // const Task = styled.div`
+// //   border: 1px solid lighgrey;
+// //   border-radius: 2px;
+// //   padding: 8px;
+// //   margin-bottom: 8px;
+// //   background-color: limegreen;
+// //   margin-top: 10px;
+// //   text-align: center;
+// //   color: white;
+// //   // display: flex;
+// // `;
+
+// // const getColumnKeys = (numOfKeys) => {
+// //   const keyArr = [];
+// //   for (let i = 1; i <= numOfKeys; i++) {
+// //     keyArr.push(i);
+// //   }
+// //   return keyArr;
+// // };
+
+// const getTaskKeys = (startIndex, endIndex) => {
+//   let keyArr = [];
+//   for (let i = startIndex; i <= endIndex; i++) {
+//     keyArr.push(i);
+//   }
+//   return keyArr;
+// };
+
+// const arr = ["one", "two"];
+
+// function App() {
+//   // const columnKeys = getColumnKeys(1);
+//   const [taskKeys1, setTaskKeys1] = React.useState(getTaskKeys(1, 5));
+//   const [taskKeys2, setTaskKeys2] = React.useState(getTaskKeys(6, 10));
+//   const [taskKeys, setTaskKeys] = React.useState([taskKeys1, taskKeys2]);
+//   // console.log("taskKeys", taskKeys);
+
+//   const onDragEnd = (result) => {
+//     console.log("result", result);
+
+//     if (result.destination !== null) {
+//       console.log("result", result);
+
+//       const items = Array.from(taskKeys1);
+
+//       const [reorderdItem] = items.splice(result.source.index, 1);
+//       // console.log("hello", reorderdItem);
+//       items.splice(result.destination.index, 0, reorderdItem);
+//       // console.log(items);
+//       setTaskKeys1(items);
+//     } else {
+//       const items = Array.from(taskKeys);
+
+//       items.splice(result.source.index, 1);
+//       setTaskKeys1(items);
+//     }
+
+//     // console.log("result", result);
+
+//     // const items = Array.from(taskKeys);
+
+//     // const [reorderdItem] = items.splice(result.source.index, 1);
+//     // console.log("hello", reorderdItem);
+//     // items.splice(result.destination.index, 0, reorderdItem);
+//     // console.log(items);
+//     // setTaskKeys(items);
+//     // let arr = [10, 20, 30, 40, 50];
+//     // const ans = arr.splice(0, 1, 89);
+//     // console.log("ans", ans, arr);
+//   };
+
+//   // console.log(columnKeys, taskKeys);
+//   // let i = 0;
+//   // setTaskKeys(getTaskKeys(i + 5));
+//   // i += taskKeys.length;
+
+//   return (
+//     <Wrapper>
+//       <DragDropContext onDragEnd={onDragEnd}>
+//         <h2 style={{ textAlign: "center" }}>React-beautiful-dnd</h2>
+//         <div style={{ display: "flex", flexDirection: "row" }}>
+//           {/* {arr.map((uniqueId, index) => {
+//             const taskKeys = index === 0 ? taskKeys1 : taskKeys2;
+//             return <DropableComponent id={uniqueId} taskKeys={taskKeys} />;
+//           })} */}
+//           <DropableComponent id='one' taskKeys={taskKeys1} />
+//           <DropableComponent id='two' taskKeys={taskKeys2} />
+//         </div>
+//       </DragDropContext>
+//     </Wrapper>
+//   );
+// }
+
+// ReactDOM.render(<App />, document.getElementById("root"));
