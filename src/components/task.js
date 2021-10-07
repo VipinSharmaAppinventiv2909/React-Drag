@@ -10,12 +10,13 @@ const Slide = styled.div`
   color: white;
 `;
 
-function Task({ provided, value }) {
+function Task({ value }) {
   return (
     <Slide
-      {...provided.draggableProps}
-      {...provided.dragHandleProps}
-      ref={provided.innerRef}>
+    // {...provided.draggableProps}
+    // {...provided.dragHandleProps}
+    // ref={provided.innerRef}
+    >
       <p style={{ width: "fit-content" }}>{JSON.stringify(value)}</p>
     </Slide>
   );
